@@ -42,6 +42,8 @@ public class ArrayListEx {
         numbersList.add(30.0f);
         numbersList.add(null);
         System.out.println(numbersList);
+
+
     }
 
 }
