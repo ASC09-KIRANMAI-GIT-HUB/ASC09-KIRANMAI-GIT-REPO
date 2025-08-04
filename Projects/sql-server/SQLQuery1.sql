@@ -24,3 +24,9 @@ SET
    first_name = 'sri sai charan'
 WHERE 
   last_name = 'pydi';
+
+DELETE FROM Friend
+WHERE sr_num IN (21,28,31,35,87);
+
+DELETE FROM Friend
+WHERE sr_num IN (6);

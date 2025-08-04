@@ -1,0 +1,11 @@
+body{
+    background-color: azure;
+}
+
+.form-box{
+    background-color: rgb(143, 143, 249);
+    width: 400px;
+    margin: 150px auto;  /* centers horizontally with some space on top */
+    padding: 20px;
+    border-radius: 8px;
+}

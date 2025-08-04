@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+  body{background-color:powderblue;}
+  </style>
+  <title>My Web Page</title>  
+</head>
+<body>
+   <button onclick="showAlert()">TASK1</button>
+   <br><br>
+   <button onclick="changePlaceholder()">TASK2</button>
+   <input type="text" id="myInput" placeholder="Unclicked">
+   <br><br>
+<script>  
+    function showAlert() {
+    alert('Hello! You clicked the button.');
+  }
+    function changePlaceholder() {
+      document.getElementById('myInput').placeholder = "Button clicked";
+    }
+</script>    
+</body>
+</html>
