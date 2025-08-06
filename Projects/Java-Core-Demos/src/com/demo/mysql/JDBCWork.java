@@ -1,6 +1,5 @@
 package com.demo.mysql;
 import java.sql.*;
-import java.sql.*;
 
 
 public class JDBCWork {

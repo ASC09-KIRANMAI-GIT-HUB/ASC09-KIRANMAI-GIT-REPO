@@ -1,5 +1,7 @@
 body{
     background-color: azure;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* better font */
+    font-size: 16px;
 }
 
 .form-box{
@@ -7,5 +9,28 @@ body{
     width: 400px;
     margin: 150px auto;  /* centers horizontally with some space on top */
     padding: 20px;
+    border-radius: 8px; 
+    border: 2px solid #333;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-box button {
+    display: block;         
+    margin: 0 auto;         
+    padding: 10px 20px;  
+}
+
+.output-box {
+    background-color: #f4f4f4;
+    border: 2px solid #ccc;
+    padding: 20px;
+    width: 400px;
+    margin: 30px auto;
     border-radius: 8px;
+    font-size: 16px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.output-box h3 {
+    margin-top: 0;
+    color: #333;
 }
