@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface LoginRepository extends JpaRepository<LoginEntity, String> {
-    // No extra methods needed for now
+    LoginEntity findByLoginId(String loginId);
 }

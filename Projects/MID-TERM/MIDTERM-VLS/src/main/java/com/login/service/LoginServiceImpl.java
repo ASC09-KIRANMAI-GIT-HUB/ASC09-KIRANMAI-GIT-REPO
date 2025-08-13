@@ -1,27 +1,23 @@
-package com.login.service.impl;
+package com.login.service;
 
 import com.login.entity.LoginEntity;
 import com.login.repository.LoginRepository;
-import com.login.service.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.Optional;
 
 @Service
 public class LoginServiceImpl implements LoginService {
 
-    private final LoginRepository loginRepository;
+    private final LoginRepository userRepository;
 
     @Autowired
-    public LoginServiceImpl(LoginRepository loginRepository) {
-        this.loginRepository = loginRepository;
+    public LoginServiceImpl(LoginRepository userRepository) {
+        this.userRepository = userRepository;
     }
 
     @Override
-    public boolean validateLogin(String loginId, String password) {
-        Optional<LoginEntity> loginOpt = loginRepository.findById(loginId);
-        if (!loginOpt.isPresent()) return false; // User not found
-        return loginOpt.get().getPassword().equals(password);
+    public boolean authenticate(String loginId, String password) {
+        LoginEntity user = userRepository.findByLoginId(loginId);
+        return user != null && user.getPassword().equals(password);
     }
 }

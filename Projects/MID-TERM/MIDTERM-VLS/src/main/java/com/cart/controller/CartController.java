@@ -10,10 +10,10 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/cart")
 public class CartController {
-
+    @Autowired
     private final CartService cartService;
 
-    @Autowired
+
     public CartController(CartService cartService) {
         this.cartService = cartService;
     }

@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface CourseRepository extends JpaRepository<CourseEntity, Integer> {
+public interface CourseRepository extends JpaRepository<CourseEntity,Integer> {
     List<CourseEntity> findByCourseNameContainingIgnoreCase(String courseName);
     List<CourseEntity> findByAuthorNameContainingIgnoreCase(String authorName);
 }

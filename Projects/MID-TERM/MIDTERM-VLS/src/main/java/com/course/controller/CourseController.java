@@ -10,10 +10,10 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/courses")
 public class CourseController {
-
+    @Autowired
     private final CourseService courseService;
 
-    @Autowired
+
     public CourseController(CourseService courseService) {
         this.courseService = courseService;
     }
@@ -28,7 +28,7 @@ public class CourseController {
         return courseService.getCourseById(id);
     }
 
-    @PostMapping
+    @PostMapping("/post")
     public CourseEntity addCourse(@RequestBody CourseEntity course) {
         return courseService.addCourse(course);
     }
