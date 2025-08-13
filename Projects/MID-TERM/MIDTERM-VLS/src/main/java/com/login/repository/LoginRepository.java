@@ -1,10 +1,9 @@
 package com.login.repository;
 
-import com.login.entity.LoginEntity;
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
 
-@Repository
+import org.springframework.data.jpa.repository.JpaRepository;
+import com.login.entity.LoginEntity;
+
 public interface LoginRepository extends JpaRepository<LoginEntity, String> {
-    LoginEntity findByLoginId(String loginId);
+    LoginEntity findByLoginIdAndPassword(String loginId, String password);
 }

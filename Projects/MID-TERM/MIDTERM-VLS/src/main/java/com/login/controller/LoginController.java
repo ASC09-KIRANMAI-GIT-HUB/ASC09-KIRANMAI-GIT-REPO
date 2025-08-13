@@ -1,38 +1,26 @@
 package com.login.controller;
 
-import com.login.service.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import com.login.entity.LoginEntity;
+import com.login.service.LoginService;
+
 @RestController
-@RequestMapping("/api/login")
+@RequestMapping("/login")
 public class LoginController {
 
-    private final LoginService loginService;
-
     @Autowired
-    public LoginController(LoginService loginService) {
-        this.loginService = loginService;
-    }
+    private LoginService loginService;
 
     @PostMapping
-    public String login(@RequestBody LoginRequest loginRequest) {
-        boolean authenticated = loginService.authenticate(
-                loginRequest.getLoginId(),
-                loginRequest.getPassword()
-        );
-        return authenticated ? "Login Successful" : "Login Failed";
-    }
+    public String login(@RequestBody LoginEntity login) {
 
-    // DTO for request
-    public static class LoginRequest {
-        private String loginId;
-        private String password;
-
-        public String getLoginId() { return loginId; }
-        public void setLoginId(String loginId) { this.loginId = loginId; }
-
-        public String getPassword() { return password; }
-        public void setPassword(String password) { this.password = password; }
+        boolean isValid = loginService.authenticate(login.getLoginId(), login.getPassword());
+        if (isValid) {
+            return "Login Successful";
+        } else {
+            return "Invalid Login";
+        }
     }
 }

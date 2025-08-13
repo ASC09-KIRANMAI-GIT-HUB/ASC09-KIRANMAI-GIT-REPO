@@ -1,28 +1,28 @@
 package com.login.entity;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
-@Table(name = "Login")  // Table name
+@Table(name = "login")
 public class LoginEntity {
 
     @Id
-    @Column(name = "loginId")  // Column name in DB
-    private String loginId;
 
-    @Column(nullable = false)
+    private String loginId;
     private String password;
 
-    public LoginEntity() {}
-
-    public LoginEntity(String loginId, String password) {
+    public String getLoginId() {
+        return loginId;
+    }
+    public void setLoginId(String loginId) {
         this.loginId = loginId;
+    }
+    public String getPassword() {
+        return password;
+    }
+    public void setPassword(String password) {
         this.password = password;
     }
-
-    public String getLoginId() { return loginId; }
-    public void setLoginId(String loginId) { this.loginId = loginId; }
-
-    public String getPassword() { return password; }
-    public void setPassword(String password) { this.password = password; }
 }
