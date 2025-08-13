@@ -1,13 +1,13 @@
-package com.friendscrud;
+package com;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class AppFrnd {
+public class App{
     public static void main( String[] args ) {
         System.out.println("Starting Friends APP");
-        SpringApplication.run(AppFrnd.class, args);
+        SpringApplication.run(App.class, args);
         System.out.println("Frnds app started Successfully...");
     }
 }
