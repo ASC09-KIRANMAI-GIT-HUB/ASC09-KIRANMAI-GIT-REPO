@@ -7,16 +7,22 @@ import javax.persistence.*;
 public class FriendEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    @Column(name = "NAME", nullable = false)
     private String name;
-    private String phone;
+
+    @Column(name="EMAIL", nullable = false)
     private String email;
+
+    @Column(name="PHONE",nullable = false)
+    private String phone;
 
     public FriendEntity() {}
 
-    public FriendEntity(String name,String phone,String email){
+    public FriendEntity(Long id,String name,String phone,String email){
+        this.id = id;
         this.name=name;
         this.phone=phone;
         this.email=email;

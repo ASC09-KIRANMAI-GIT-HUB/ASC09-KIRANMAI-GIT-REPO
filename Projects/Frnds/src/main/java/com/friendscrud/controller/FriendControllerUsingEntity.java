@@ -9,8 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/friends")
-@CrossOrigin(origins = "*")
+@RequestMapping("/api/v2")
 public class FriendControllerUsingEntity {
 
     private final FriendService friendService;
@@ -20,22 +19,25 @@ public class FriendControllerUsingEntity {
         this.friendService = friendService;
     }
 
-    @GetMapping
+    @GetMapping("/friends")
     public List<FriendEntity> getAllFriends(){
         return friendService.getAllFriends();
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/friends/{id}")
     public FriendEntity getFriendById(@PathVariable Long id){
         return friendService.getFriendById(id);
     }
+
+    @PostMapping("/friends")
+    public FriendEntity addFriend(@RequestBody FriendEntity friend){return friendService.addFriend(friend);}
 
     @PutMapping("/{id}")
     public FriendEntity updateFriend(@PathVariable Long id, @RequestBody FriendEntity friend){
         return friendService.updateFriend(id,friend);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/friends/{id}")
     public void deleteFriend(@PathVariable Long id){
         friendService.deleteFriend(id);
     }
